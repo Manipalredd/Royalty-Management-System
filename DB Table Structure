@@ -1,0 +1,84 @@
+Table: contactform
+Columns:
+id int AI PK 
+firstname varchar(100) 
+lastname varchar(100) 
+email varchar(255) 
+mobileno varchar(15) 
+query text 
+status varchar(50) 
+role varchar(255)
+
+Table: partnerships
+Columns:
+partnership_id int AI PK 
+artist_id int 
+manager_id int 
+status varchar(255) 
+start_date timestamp 
+end_date timestamp 
+percentage double 
+duration_months int 
+comments text
+
+Table: royalties
+Columns:
+royalty_id int AI PK 
+song_id int 
+calculated_date datetime(6) 
+total_streams bigint 
+royalty_amount double 
+artist_id int 
+status varchar(255)
+
+Table: songs
+Columns:
+song_id int AI PK 
+artist_id int 
+title varchar(255) 
+release_date datetime(6) 
+collaborators varchar(255) 
+created_at timestamp 
+updated_at timestamp 
+genre varchar(255)
+
+Table: streams
+Columns:
+stream_id int AI PK 
+song_id int 
+stream_date datetime(6) 
+stream_count int 
+user_id int 
+status varchar(20)
+
+
+Table: transactions
+Columns:
+transaction_id int AI PK 
+receiver int 
+royalty_id int 
+transaction_date timestamp 
+transaction_amount double 
+manager_id int 
+sender int 
+transaction_type varchar(255) 
+reciever int
+
+
+Table: users
+Columns:
+user_id int AI PK 
+username varchar(255) 
+email varchar(255) 
+firstname varchar(255) 
+lastname varchar(255) 
+mobile_no varchar(255) 
+address varchar(255) 
+role varchar(255) 
+password_hash varchar(255) 
+first_login tinyint(1) 
+created_at timestamp 
+updated_at timestamp 
+is_active tinyint(1) 
+password varchar(255) 
+manager_id int
